@@ -7,7 +7,106 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container"></div>
+    <header>
+        <p>
+            <img src="assets/tick-circle-icon.png" alt="Tick Circle Icon">
+                I-Do
+        </p>
+    </header>
+
+    <div class="content">
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <img src="assets/home-icon.png" alt="Home icon">
+                    <span class="list-title">Tasks</span> 
+                    <span class="count">3</span>
+                </li>
+                <li>
+                    <img src="assets/star-icon.png" alt="Star Icon">
+                    <span class="list-title">Important</span> 
+                    <span class="count">1</span>
+                </li>
+                <li>
+                    <img src="assets/book-icon.png" alt="Book Icon">
+                    <span class="list-title">Uni</span> 
+                    <span class="count">5</span>
+                </li>
+                <li>
+                    <img src="assets/trash-icon.png" alt="Trash Icon">
+                    <span class="list-title">Completed</span> 
+                    <span class="count">1</span>
+                </li>
+            </ul>
+            <button>+ New List</button>
+        </div>
+
+        <!-- There should be a .list page for each list in the sidebar -->
+        <div class="list">
+            <h1>
+                <img src="assets/home-icon.png" alt="Home Icon">
+                Tasks
+            </h1>
+            <div class="list-items">
+                <div class="list-item">
+                    <input type="checkbox">
+                    <label class="item-title">Wash dishes</label>
+                    <div>
+                        <p class="date">
+                            <img src="assets/calendar-icon.png" alt="Calendar Icon">
+                            Due today |
+                        </p>
+                        <img src="assets/notes-icon.png" alt="Notes Icon">
+                    </div>
+                    <img src="assets/star-filled-icon.png" alt="Filled Start Icon">
+                </div>
+                <div class="list-item">
+                    <input type="checkbox">
+                    <label class="item-title">Take trash out</label>
+                    <div>
+                        <p class="date">
+                            <img src="assets/calendar-icon.png" alt="Calendar Icon">
+                            Due tomorrow |
+                        </p>
+                        <img src="assets/notes-icon.png" alt="Notes Icon">
+                    </div>
+                    <img src="assets/star-icon.png" alt="Filled Start Icon">
+                </div>
+                <div class="list-item">
+                    <input type="checkbox">
+                    <label class="item-title">Wash dishes</label>
+                    <div>
+                        <p class="date">
+                            <img src="assets/calendar-icon.png" alt="Calendar Icon">
+                            Aug 10 2023 |
+                        </p>
+                        <img src="assets/notes-icon.png" alt="Notes Icon">
+                    </div>
+                    <img src="assets/star-icon.png" alt="Filled Start Icon">
+                </div>
+            </div>
+            <div>
+                <p>+ New Task</p>
+            </div>
+        </div>
+        <div class="details">
+            <img src="assets/x-icon.png" alt="X Icon">
+            <div class="item-title">
+                <input type="checkbox">
+                <label contenteditable="true">Wash dishes</label>
+                <img src="assets/star-filled-icon.png" alt="Filled Star Icon">
+            </div>
+            <div class="calendar">
+                <img src="assets/calendar-icon.png" alt="Calendar Icon">
+                <input type="date" name="calendar" id="calendar">
+            </div>
+            <div>
+                <img src="assets/notes-icon.png" alt="Notes Icon">
+                <span contenteditable="true">Don't brake one</span>
+            </div>
+            <img src="assets/trash-icon.png" alt="Trash Icon">
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
