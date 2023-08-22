@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
+    <link rel="shortcut icon" href="assets/tick-circle-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -45,64 +46,75 @@
         <div class="list">
             <h1>
                 <img src="assets/home-icon.png" alt="Home Icon">
-                Tasks
+                <span contenteditable="true">Tasks</span>
             </h1>
             <div class="list-items">
                 <div class="list-item">
                     <input type="checkbox">
-                    <label class="item-title">Wash dishes</label>
-                    <div>
-                        <p class="date">
-                            <img src="assets/calendar-icon.png" alt="Calendar Icon">
-                            Due today |
-                        </p>
-                        <img src="assets/notes-icon.png" alt="Notes Icon">
+                    <div class="task-info">
+                        <label class="item-title">Wash dishes</label>
+                        <div>
+                            <p class="date">
+                                <img src="assets/calendar-icon.png" alt="Calendar Icon">
+                                Due today |
+                            </p> 
+                            <img src="assets/notes-icon.png" alt="Notes Icon">
+                        </div>
                     </div>
                     <img src="assets/star-filled-icon.png" alt="Filled Start Icon">
                 </div>
                 <div class="list-item">
                     <input type="checkbox">
-                    <label class="item-title">Take trash out</label>
-                    <div>
-                        <p class="date">
-                            <img src="assets/calendar-icon.png" alt="Calendar Icon">
-                            Due tomorrow |
-                        </p>
-                        <img src="assets/notes-icon.png" alt="Notes Icon">
+                    <div class="task-info">
+                        <label class="item-title">Take trash out</label>
+                        <div>
+                            <p class="date">
+                                <img src="assets/calendar-icon.png" alt="Calendar Icon">
+                                Due tomorrow | 
+                            </p>
+                            <img src="assets/notes-icon.png" alt="Notes Icon">
+                        </div>
                     </div>
                     <img src="assets/star-icon.png" alt="Filled Start Icon">
                 </div>
                 <div class="list-item">
                     <input type="checkbox">
-                    <label class="item-title">Wash dishes</label>
-                    <div>
-                        <p class="date">
-                            <img src="assets/calendar-icon.png" alt="Calendar Icon">
-                            Aug 10 2023 |
-                        </p>
-                        <img src="assets/notes-icon.png" alt="Notes Icon">
+                    <div class="task-info">
+                        <label class="item-title">Finish reading Book</label>
+                        <div>
+                            <p class="date">
+                                <img src="assets/calendar-icon.png" alt="Calendar Icon">
+                                Aug 10 2023 | 
+                            </p>
+                            <img src="assets/notes-icon.png" alt="Notes Icon">
+                        </div>
                     </div>
                     <img src="assets/star-icon.png" alt="Filled Start Icon">
                 </div>
             </div>
             <div>
-                <p>+ New Task</p>
+                <button>+ New Task</button>
             </div>
         </div>
         <div class="details">
             <img src="assets/x-icon.png" alt="X Icon">
-            <div class="item-title">
-                <input type="checkbox">
-                <label contenteditable="true">Wash dishes</label>
-                <img src="assets/star-filled-icon.png" alt="Filled Star Icon">
-            </div>
-            <div class="calendar">
-                <img src="assets/calendar-icon.png" alt="Calendar Icon">
-                <input type="date" name="calendar" id="calendar">
-            </div>
-            <div>
-                <img src="assets/notes-icon.png" alt="Notes Icon">
-                <span contenteditable="true">Don't brake one</span>
+            <div class="details-form">
+                <div class="item-title">
+                    <input type="checkbox">
+                    <label contenteditable="true">Wash dishes</label>
+                    <img src="assets/star-filled-icon.png" alt="Filled Star Icon">
+                </div>
+                <div class="calendar">
+                    <!--<img src="assets/calendar-icon.png" alt="Calendar Icon">-->
+                    <span id="date-picker">
+                        <input type="date" name="calendar" id="calendar">
+                    </span>
+                    <p>Due today</p>
+                </div>
+                <div id="add-notes">
+                    <img src="assets/notes-icon.png" alt="Notes Icon">
+                    <p contenteditable="true">Don't break one</p>
+                </div>
             </div>
             <img src="assets/trash-icon.png" alt="Trash Icon">
         </div>

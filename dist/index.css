@@ -1,0 +1,277 @@
+/* Desktop first approach */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+:root {
+    --main-bg-color: rgb(35, 35, 35);
+    --main-color: rgb(255, 255, 255);
+    --medium-color: rgb(45, 45, 45);
+    --clearer-bg-color: rgb(55, 55, 55);
+    --border-radius-unit: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
+    font-family: 'Inter', sans-serif;
+    height: clamp(50px, 100vh, 100vh);
+    width: 100vw;
+}
+
+header {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header p {
+    font-size: 1.5em;
+    font-family: 'Oswald', sans-serif;
+}
+
+.content {
+    height: calc(100vh - 50px);
+    display: grid;
+    grid-template-columns: 0.7fr 2fr 0.9fr;
+}
+
+.sidebar {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar>ul {
+    font-size: 1.5em;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar>ul>li, .sidebar>button {
+    height: 60px;
+    padding: 20px;
+    border-radius: var(--border-radius-unit);
+    align-content: center;
+}
+
+.sidebar>ul>li {
+    display: grid;
+    grid-template-columns: 2em 1fr 1em;
+}
+
+.sidebar>ul>li>img {
+    height: 1em;
+    width: 1em;
+}
+
+.count {
+    background-color: var(--clearer-bg-color);
+    font-size: 0.7em;
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar>button {
+    background-color: transparent;
+    color: inherit;
+    font-size: 1.3em;
+    text-align: left;
+    border: none;
+}
+
+.list {
+    background: url(assets/waterfall-bg.png), lightgray 50% / cover no-repeat;
+    background-position: center;
+    backdrop-filter: blur(100px);
+    padding: 30px;
+    display: grid;
+    grid-template-rows: 40px 1fr 5em;
+    gap: 20px;
+}
+
+.list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.list-item {
+    background-color: var(--main-bg-color);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 20px 1fr 30px;
+    gap: 20px;
+}
+
+.list-items img {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+input[type='checkbox'] {
+    content: '';
+    background-color: inherit;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    border: solid 1.5px var(--main-color);
+    appearance: none;
+}
+  
+input[type='checkbox']:hover {
+    background-color: var(--main-bg-color);
+}
+
+input[type='checkbox']:checked {
+    background-color: white;
+}
+
+.list>div>button {
+    background-color: var(--main-bg-color);
+    color: var(--main-color);
+    font-size: 1.3em;
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: var(--border-radius-unit);
+}
+
+label {
+    font-size: 1.3em;
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.task-info>div>p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.list-item>div>div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.details {
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 40px 1fr 40px;
+    justify-items: end;
+}
+
+.details>div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.details>div>div {
+    background-color: var(--medium-color);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.details .item-title {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+}
+
+.details input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    border-width: 2px;
+}
+
+.details label, .calendar p, #add-notes p {
+    font-size: 1.5em;
+}
+
+.details label:hover {
+    cursor: text;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: 40px 1fr; 
+    align-items: center;
+}
+
+#date-picker {
+    background: url(assets/calendar-icon.png) no-repeat;
+    height: 120%;
+}
+
+input[type='date'] {
+    opacity: 0;
+    height: 30px;
+    width: 400px;
+}
+
+::-webkit-datetime-edit { 
+    background-color: transparent;
+}
+
+::-webkit-datetime-edit-fields-wrapper { 
+    background-color: transparent;
+}
+
+:is(::-webkit-datetime-edit-text ::-webkit-datetime-edit-month-field ::-webkit-datetime-edit-day-field ::-webkit-datetime-edit-year-field) { 
+    display: none;
+}
+
+::-webkit-calendar-picker-indicator {
+    width: 100%;
+}
+
+#add-notes {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    justify-content: start;
+    align-items: start;
+}
+
+#add-notes p {
+    background-color: inherit;
+    color: var(--main-color);
+    font-family: inherit;
+}
+
+:focus {
+    outline: none;
+}
+
+:is(.sidebar>ul>li, .sidebar>button, .list-item, .list>div>button, .details>div>div):hover {
+    background-color: var(--clearer-bg-color);
+}
+
+/* All elements that hovered shows cursor pointer */
+:is(.sidebar>ul>li, .sidebar>button, 
+.list-item, .list>div>button, input[type='checkbox']):hover {
+    cursor: pointer;
+}
