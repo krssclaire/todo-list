@@ -27,9 +27,14 @@ body {
 
 header {
     height: 50px;
+    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+header>img {
+    display: none;
 }
 
 header p {
@@ -48,6 +53,10 @@ header p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.sidebar>img {
+    display: none;
 }
 
 .sidebar>ul {
@@ -274,4 +283,61 @@ input[type='date'] {
 :is(.sidebar>ul>li, .sidebar>button, 
 .list-item, .list>div>button, input[type='checkbox']):hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        justify-items: center;
+    }
+    header>img {
+        display: inline;
+    }
+    .content {
+        grid-template-columns: 1fr;
+    }
+    .list>div>button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        font-size: 2em;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-text {
+        display: none;
+    }
+    .sidebar {
+        display: grid;
+        grid-template-rows: 40px 1fr 40px;
+        grid-template-columns: 1fr;
+    }
+    .sidebar>img {
+        display: block;
+        height: 20px;
+        width: 20px;
+        justify-self: end;
+    }
+    .sidebar ul  {
+        gap: 10px;
+    }
+    .details {
+        gap: 30px;
+    }
+    .details .details-form {
+        gap: 30px;
+    }
+    #add-notes {
+        min-height: 200px;
+    }
+
+    /* Check visibility */
+    .details, .sidebar {
+        display: none;
+    }
 }
