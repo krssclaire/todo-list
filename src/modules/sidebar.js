@@ -14,6 +14,11 @@ export const Sidebar = (() => {
     const completedCount = document.createElement('span');
     const newListBtn = document.createElement('button');
 
+    const xIcon = Icons.xIcon.cloneNode(true);
+    const houseIcon = Icons.houseIcon.cloneNode(true);
+    const starEmptyIcon = Icons.starEmptyIcon.cloneNode(true);
+    const trashIcon = Icons.trashIcon.cloneNode(true);
+
     bar.setAttribute('class', 'sidebar');
     taskText.textContent = 'Tasks';
     taskCount.setAttribute('class', 'count');
@@ -26,11 +31,11 @@ export const Sidebar = (() => {
     completedCount.textContent = '1'    // This count will be different based on the quantity of tasks in that list
     newListBtn.textContent = '+ New List';
 
-    bar.append(Icons.xIcon, listsContainer, newListBtn);
+    bar.append(xIcon, listsContainer, newListBtn);
     listsContainer.append(tasksList, importantList, completedList);
-    tasksList.append(Icons.houseIcon, taskText, taskCount);
-    importantList.append(Icons.starEmptyIcon, importantText, importantCount);
-    completedList.append(Icons.trashIcon, completedText, completedCount);
+    tasksList.append(houseIcon, taskText, taskCount);
+    importantList.append(starEmptyIcon, importantText, importantCount);
+    completedList.append(trashIcon, completedText, completedCount);
     
     return { bar };
 })();

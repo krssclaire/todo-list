@@ -15,6 +15,12 @@ export const List = (()=> {
     const addTaskDiv = document.createElement('div');
     const btn = document.createElement('button');
     const btnText = document.createElement('span');
+    const xIcon = Icons.xIcon.cloneNode(true);
+
+    const houseIcon = Icons.houseIcon.cloneNode(true);
+    const starFilledIcon = Icons.starFilledIcon.cloneNode(true);
+    const notesIcon = Icons.notesIcon.cloneNode(true);
+    const calendarIcon = Icons.calendarIcon.cloneNode(true);
 
     content.setAttribute('class', 'list');
     titleText.setAttribute('contenteditable', 'true');
@@ -32,12 +38,12 @@ export const List = (()=> {
     btnText.textContent = ' New Task';
 
     content.append(title, itemsContainer, addTaskDiv);
-    title.append(Icons.houseIcon, titleText);
+    title.append(houseIcon, titleText);
     itemsContainer.append(item);
-    item.append(checkbox, taskInfo, Icons.starFilledIcon);
+    item.append(checkbox, taskInfo, starFilledIcon);
     taskInfo.append(itemLabel, infoGroup);
-    infoGroup.append(dateInfo, Icons.notesIcon);
-    dateInfo.prepend(Icons.calendarIcon);
+    infoGroup.append(dateInfo, notesIcon);
+    dateInfo.prepend(calendarIcon);
     dateInfo.append(lineDivider);
     addTaskDiv.append(btn);
     btn.append(btnText);
